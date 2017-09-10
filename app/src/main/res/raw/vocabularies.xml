@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<vocabularies>
+    <word>
+        <id>1</id>
+        <english>apple</english>
+        <meaning>red fruit</meaning>
+        <rating>1</rating>
+    </word>
+    <word>
+        <id>2</id>
+        <english>banana</english>
+        <meaning>yellow fruit</meaning>
+        <rating>2</rating>
+    </word>
+    <word>
+        <id>3</id>
+        <english>car</english>
+        <meaning>travel tool</meaning>
+        <rating>3</rating>
+    </word>
+</vocabularies>
