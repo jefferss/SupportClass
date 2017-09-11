@@ -6,11 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.android.supportclass.MainActivity">
+    tools:context="com.example.android.supportclass.WordActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="416dp"
+        android:layout_weight="2.07">
 
         <Button
             android:id="@+id/btnNext"
@@ -50,16 +51,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
-
-        <TextView
-            android:id="@+id/message"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:layout_marginLeft="@dimen/activity_horizontal_margin"
-            android:layout_marginRight="@dimen/activity_horizontal_margin"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:text="@string/title_word" />
 
     </FrameLayout>
 
