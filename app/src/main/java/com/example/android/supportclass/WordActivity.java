@@ -15,6 +15,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 import java.io.FileInputStream;
+import java.util.Random;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -82,7 +83,10 @@ public class WordActivity extends AppCompatActivity {
             Document doc = dBuilder.parse(inputStream);
             doc.getDocumentElement().normalize();
             NodeList nList = doc.getElementsByTagName("word");
-            Element element = (Element)nList.item(0);
+
+            //use a random number to select a word.
+            Random rand = new Random();
+            Element element = (Element)nList.item(rand.nextInt(nList.getLength()));
             String screenWord = element.getElementsByTagName("english").item(0).getTextContent();
             String screenWordMeaning = element.getElementsByTagName("meaning").item(0).getTextContent();
             String sourceWord = element.getElementsByTagName("source").item(0).getTextContent();
