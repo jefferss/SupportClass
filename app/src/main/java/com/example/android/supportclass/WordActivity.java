@@ -7,20 +7,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import java.io.InputStream;
+import java.io.FileInputStream;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 public class WordActivity extends AppCompatActivity {
-    private TextView mTextMessage;
-    private TextView tvScreenWord;
-    private TextView tvScreenMeaning;
+    private TextView txtvScreenWord;
+    private TextView txtvScreenMeaning;
+    private TextView txtvSource;
+    private RadioButton rbnLevel1;
+    private RadioButton rbnLevel2;
+    private RadioButton rbnLevel3;
+
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -52,9 +59,13 @@ public class WordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_word);
 
-        mTextMessage = (TextView) findViewById(R.id.message);
-        tvScreenWord = (TextView) findViewById(R.id.txtWord);
-        tvScreenMeaning = (TextView) findViewById(R.id.txtMeaning);
+        txtvScreenWord = (TextView) findViewById(R.id.tvWord);
+        txtvScreenMeaning = (TextView) findViewById(R.id.tvMeaning);
+        txtvSource = (TextView) findViewById(R.id.tvSource);
+        rbnLevel1 = (RadioButton)  findViewById(R.id.rbLevel1);
+        rbnLevel2 = (RadioButton)  findViewById(R.id.rbLevel2);
+        rbnLevel3 = (RadioButton)  findViewById(R.id.rbLevel3);
+
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setSelectedItemId(R.id.navigation_word);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -63,19 +74,40 @@ public class WordActivity extends AppCompatActivity {
     }
 
     private void openWordCards() {
-        InputStream input = getResources().openRawResource(R.raw.vocabularies);
 
         try{
+            FileInputStream inputStream = openFileInput("vocabularies.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-            Document doc = dBuilder.parse(input);
+            Document doc = dBuilder.parse(inputStream);
             doc.getDocumentElement().normalize();
             NodeList nList = doc.getElementsByTagName("word");
             Element element = (Element)nList.item(0);
             String screenWord = element.getElementsByTagName("english").item(0).getTextContent();
             String screenWordMeaning = element.getElementsByTagName("meaning").item(0).getTextContent();
-            tvScreenWord.setText(screenWord);
-            tvScreenMeaning.setText(screenWordMeaning);
+            String sourceWord = element.getElementsByTagName("source").item(0).getTextContent();
+            String level = element.getElementsByTagName("level").item(0).getTextContent();
+
+            txtvScreenWord.setText(screenWord);
+            txtvScreenMeaning.setText(screenWordMeaning);
+            txtvSource.setText(sourceWord);
+            switch (level) {
+                case "1":
+                    rbnLevel1.setChecked(true);
+                    rbnLevel2.setChecked(false);
+                    rbnLevel3.setChecked(false);
+                    break;
+                case "2":
+                    rbnLevel1.setChecked(false);
+                    rbnLevel2.setChecked(true);
+                    rbnLevel3.setChecked(false);
+                    break;
+                case "3":
+                    rbnLevel1.setChecked(false);
+                    rbnLevel2.setChecked(false);
+                    rbnLevel3.setChecked(true);
+                    break;
+            }
         }catch(Exception ex){
             Log.i("ExceptionOccurred", "openWordCards: load xml file exception. Msg: " + ex.getMessage());
         }
