@@ -98,17 +98,11 @@ public class WordActivity extends AppCompatActivity {
             switch (level) {
                 case "1":
                     rbnLevel1.setChecked(true);
-                    rbnLevel2.setChecked(false);
-                    rbnLevel3.setChecked(false);
                     break;
                 case "2":
-                    rbnLevel1.setChecked(false);
                     rbnLevel2.setChecked(true);
-                    rbnLevel3.setChecked(false);
                     break;
                 case "3":
-                    rbnLevel1.setChecked(false);
-                    rbnLevel2.setChecked(false);
                     rbnLevel3.setChecked(true);
                     break;
             }
