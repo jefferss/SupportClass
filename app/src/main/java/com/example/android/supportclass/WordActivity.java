@@ -241,6 +241,8 @@ public class WordActivity extends AppCompatActivity {
         }
         catch (FileNotFoundException e)
         {
+            //clear word image
+            imgvWordPhoto.setImageResource(0);
             e.printStackTrace();
         }
     }
