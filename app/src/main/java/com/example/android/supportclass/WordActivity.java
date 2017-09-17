@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
@@ -15,10 +16,15 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
 import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Random;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+
+import model.WordModel;
 
 public class WordActivity extends AppCompatActivity {
     private TextView txtvScreenWord;
@@ -27,8 +33,8 @@ public class WordActivity extends AppCompatActivity {
     private RadioButton rbnLevel1;
     private RadioButton rbnLevel2;
     private RadioButton rbnLevel3;
-
-
+    private List<WordModel> wmlst = new ArrayList<>();
+    private int currWordIdx;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -77,6 +83,7 @@ public class WordActivity extends AppCompatActivity {
     private void openWordCards() {
 
         try{
+            //read content from xml file
             FileInputStream inputStream = openFileInput("vocabularies.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -84,31 +91,56 @@ public class WordActivity extends AppCompatActivity {
             doc.getDocumentElement().normalize();
             NodeList nList = doc.getElementsByTagName("word");
 
-            //use a random number to select a word.
-            Random rand = new Random();
-            Element element = (Element)nList.item(rand.nextInt(nList.getLength()));
-            String screenWord = element.getElementsByTagName("english").item(0).getTextContent();
-            String screenWordMeaning = element.getElementsByTagName("meaning").item(0).getTextContent();
-            String sourceWord = element.getElementsByTagName("source").item(0).getTextContent();
-            String level = element.getElementsByTagName("level").item(0).getTextContent();
+            for(int i = 0; i < nList.getLength(); ++i){
+                WordModel wm = new WordModel();
+                Element element = (Element)nList.item(i);
+                wm.setIdNum(Integer.parseInt( element.getElementsByTagName("id").item(0).getTextContent() ));
+                wm.setEnglishword(element.getElementsByTagName("english").item(0).getTextContent());
+                wm.setMeaning(element.getElementsByTagName("meaning").item(0).getTextContent());
+                wm.setLevel(element.getElementsByTagName("level").item(0).getTextContent());
+                wm.setPicture(element.getElementsByTagName("source").item(0).getTextContent());
+                wm.setSource(element.getElementsByTagName("source").item(0).getTextContent());
 
-            txtvScreenWord.setText(screenWord);
-            txtvScreenMeaning.setText(screenWordMeaning);
-            txtvSource.setText(sourceWord);
-            switch (level) {
-                case "1":
-                    rbnLevel1.setChecked(true);
-                    break;
-                case "2":
-                    rbnLevel2.setChecked(true);
-                    break;
-                case "3":
-                    rbnLevel3.setChecked(true);
-                    break;
+                wmlst.add(wm);
             }
+            //randomly select a word
+            long seed = System.nanoTime();
+            Collections.shuffle(wmlst, new Random(seed));
+
+            int currWordIdx = 0;
+            int nextWordIdx = currWordIdx;
+            UpdateWordCard(nextWordIdx);
         }catch(Exception ex){
             Log.i("ExceptionOccurred", "openWordCards: load xml file exception. Msg: " + ex.getMessage());
         }
+    }
 
+    private void UpdateWordCard(int nWdIdx) {
+        txtvScreenWord.setText(wmlst.get(nWdIdx).getEnglishWord());
+        txtvScreenMeaning.setText(wmlst.get(nWdIdx).getMeaning());
+        txtvSource.setText(wmlst.get(nWdIdx).getSource());
+        switch (wmlst.get(nWdIdx).getLevel()) {
+            case "1":
+                rbnLevel1.setChecked(true);
+                break;
+            case "2":
+                rbnLevel2.setChecked(true);
+                break;
+            case "3":
+                rbnLevel3.setChecked(true);
+                break;
+        }
+    }
+
+    public void showNextWord(View v) {
+        currWordIdx += 1;
+        int wordIdx = currWordIdx;
+        UpdateWordCard(wordIdx);
+    }
+
+    public void showPreviousWord(View v) {
+        currWordIdx -= 1;
+        int wordIdx = currWordIdx;
+        UpdateWordCard(wordIdx);
     }
 }

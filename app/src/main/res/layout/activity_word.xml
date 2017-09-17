@@ -22,20 +22,36 @@
         android:layout_weight="2.07">
 
         <Button
-            android:id="@+id/btnNext"
+            android:id="@+id/btnPrecious"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/button"
+            android:layout_alignBottom="@+id/button"
+            android:layout_marginEnd="48dp"
+            android:layout_marginRight="48dp"
+            android:layout_toLeftOf="@+id/button"
+            android:layout_toStartOf="@+id/button"
+            android:onClick="showPreviousWord"
+            android:text="@string/wordLayout_previous" />
+
+        <Button
+            android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="29dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="26dp"
+            android:layout_marginEnd="73dp"
+            android:layout_marginRight="73dp"
             android:onClick="showNextWord"
-            android:text="Next" />
+            android:text="@string/wordLayout_next" />
 
         <TextView
             android:id="@+id/tvWord"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:text="WordSample"
+            android:text="@string/wordLayout_sampleWord"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -47,7 +63,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/tvWord"
-            android:text="SampleMeaning"
+            android:text="@string/wordLayout_sampleMeaning"
             android:textAlignment="center" />
 
         <EditText
@@ -56,7 +72,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Source:"
+            android:text="@string/wordLayout_sourceTitle"
             android:layout_alignBottom="@+id/radioGroup"
             android:layout_toLeftOf="@+id/tvSource"
             android:layout_toStartOf="@+id/tvSource"
@@ -68,17 +84,17 @@
             android:id="@+id/tvSource"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="DefinitionSource"
+            android:text="@string/wordLayout_definitionSource"
             android:layout_alignBaseline="@+id/ptSource"
             android:layout_alignBottom="@+id/ptSource"
-            android:layout_alignLeft="@+id/btnNext"
-            android:layout_alignStart="@+id/btnNext" />
+            android:layout_alignRight="@+id/button"
+            android:layout_alignEnd="@+id/button" />
 
         <RadioGroup
             android:id="@+id/radioGroup"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_above="@+id/btnNext"
+            android:layout_above="@+id/btnPrecious"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:orientation="horizontal">
@@ -88,21 +104,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Level 1" />
+                android:text="@string/wordLayout_level1" />
 
             <RadioButton
                 android:id="@+id/rbLevel2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Level 2" />
+                android:text="@string/wordLayout_level2" />
 
             <RadioButton
                 android:id="@+id/rbLevel3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Level 3" />
+                android:text="@string/wordLayout_level3" />
         </RadioGroup>
 
     </RelativeLayout>

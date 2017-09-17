@@ -3,4 +3,13 @@
     <string name="title_home">Home</string>
     <string name="title_word">Word</string>
     <string name="title_information">Information</string>
+    <string name="wordLayout_next">Next</string>
+    <string name="wordLayout_previous">Previous</string>
+    <string name="wordLayout_definitionSource">DefinitionSource</string>
+    <string name="wordLayout_level1">Level 1</string>
+    <string name="wordLayout_level2">Level 2</string>
+    <string name="wordLayout_level3">Level 3</string>
+    <string name="wordLayout_sourceTitle">Source:</string>
+    <string name="wordLayout_sampleWord">SampleWord</string>
+    <string name="wordLayout_sampleMeaning">SampleMeaning:</string>
 </resources>
