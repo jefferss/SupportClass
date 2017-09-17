@@ -13,7 +13,7 @@
         <english>banana</english>
         <meaning>yellow fruit</meaning>
         <level>2</level>
-        <picture>banana.jpg</picture>
+        <picture>banana.png</picture>
         <source>Longman</source>
     </word>
     <word>
@@ -21,7 +21,7 @@
         <english>car</english>
         <meaning>travel tool</meaning>
         <level>3</level>
-        <picture>car.jpg</picture>
+        <picture>car.png</picture>
         <source>Longman</source>
     </word>
 </vocabularies>

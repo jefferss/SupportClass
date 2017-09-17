@@ -25,17 +25,17 @@
             android:id="@+id/btnPrecious"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/button"
-            android:layout_alignBottom="@+id/button"
+            android:layout_alignBaseline="@+id/btnNext"
+            android:layout_alignBottom="@+id/btnNext"
             android:layout_marginEnd="48dp"
             android:layout_marginRight="48dp"
-            android:layout_toLeftOf="@+id/button"
-            android:layout_toStartOf="@+id/button"
+            android:layout_toLeftOf="@+id/btnNext"
+            android:layout_toStartOf="@+id/btnNext"
             android:onClick="showPreviousWord"
             android:text="@string/wordLayout_previous" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnNext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -73,7 +73,7 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:text="@string/wordLayout_sourceTitle"
-            android:layout_alignBottom="@+id/radioGroup"
+            android:layout_alignBottom="@+id/rdgWord"
             android:layout_toLeftOf="@+id/tvSource"
             android:layout_toStartOf="@+id/tvSource"
             android:layout_marginRight="13dp"
@@ -87,11 +87,11 @@
             android:text="@string/wordLayout_definitionSource"
             android:layout_alignBaseline="@+id/ptSource"
             android:layout_alignBottom="@+id/ptSource"
-            android:layout_alignRight="@+id/button"
-            android:layout_alignEnd="@+id/button" />
+            android:layout_alignRight="@+id/btnNext"
+            android:layout_alignEnd="@+id/btnNext" />
 
         <RadioGroup
-            android:id="@+id/radioGroup"
+            android:id="@+id/rdgWord"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_above="@+id/btnPrecious"
@@ -120,6 +120,14 @@
                 android:layout_weight="1"
                 android:text="@string/wordLayout_level3" />
         </RadioGroup>
+
+        <ImageView
+            android:id="@+id/imgWordPhoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@android:drawable/screen_background_light_transparent" />
 
     </RelativeLayout>
 
