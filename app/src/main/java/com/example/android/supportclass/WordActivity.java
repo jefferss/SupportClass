@@ -1,11 +1,13 @@
 package com.example.android.supportclass;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
+import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
@@ -43,7 +45,7 @@ import javax.xml.transform.stream.StreamResult;
 
 import model.WordModel;
 
-public class WordActivity extends AppCompatActivity {
+public class WordActivity extends Activity {
     private TextView txtvScreenWord;
     private TextView txtvScreenMeaning;
     private TextView txtvSource;
@@ -65,35 +67,37 @@ public class WordActivity extends AppCompatActivity {
     private static final String filePath = "/data/data/com.example.android.supportclass/files/";
     private static final String fileName = "vocabularies.xml";
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+    //导航切换
+    private Intent intent;
+    private RadioGroup rgGroup;
+    public void radioGroupChanged(RadioGroup rgGroup){
+        intent=new Intent();
 
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Intent intent = new Intent();
+        rgGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, @IdRes int checkedId) {
+                switch (checkedId){
+                    case R.id.rb_home:
+                        //首页
+                        intent.setClass(WordActivity.this,MainActivity.class );
+                        startActivity(intent);
+                        break;
+                    case R.id.rb_word:
 
+                        break;
 
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    intent.setClass(WordActivity.this , MainActivity.class);
-                    startActivity(intent);
-                    return true;
-                case R.id.navigation_word:
-                    return true;
-                case R.id.navigation_information:
-                    intent.setClass(WordActivity.this , InformationActivity.class);
-                    startActivity(intent);
-                    return true;
+                }
             }
-            return false;
-        }
-
-    };
+        });
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_word);
+        rgGroup = (RadioGroup)findViewById(R.id.rg_group);
+        radioGroupChanged(rgGroup);
 
         txtvScreenWord = (TextView) findViewById(R.id.tvWord);
         txtvScreenMeaning = (TextView) findViewById(R.id.tvMeaning);
@@ -108,9 +112,9 @@ public class WordActivity extends AppCompatActivity {
 
         btonPrevious.setEnabled(false);
 
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+   /*     BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setSelectedItemId(R.id.navigation_word);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);*/
 
 
         openWordCards();
