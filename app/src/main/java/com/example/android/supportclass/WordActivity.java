@@ -212,6 +212,7 @@ public class WordActivity extends Activity {
             //randomly select a word
             long seed = System.nanoTime();
             Collections.shuffle(wmlst, new Random(seed));
+            Collections.sort(wmlst);
 
             int currWordIdx = 0;
             int nextWordIdx = currWordIdx;

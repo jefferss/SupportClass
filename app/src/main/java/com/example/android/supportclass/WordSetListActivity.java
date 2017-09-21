@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class WordSetListActivity extends Activity {
@@ -43,6 +44,7 @@ public class WordSetListActivity extends Activity {
                 xmlFileLst.add(filename);
             }
         }
+        Collections.sort(xmlFileLst);
 
         //launch list view
         ArrayAdapter<String> adapter =new ArrayAdapter<String>(this, R.layout.activity_word_set_list_view, R.id.txtWord, xmlFileLst);

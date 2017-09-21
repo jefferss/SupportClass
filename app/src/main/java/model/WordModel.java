@@ -4,7 +4,7 @@ package model;
  * Created by Jeff on 17/09/2017.
  */
 
-public class WordModel {
+public class WordModel implements Comparable <WordModel>{
     private int id;
     private String englishWord;
     private String meaning;
@@ -58,5 +58,11 @@ public class WordModel {
 
     public void setSource(String s){
         this.source = s;
+    }
+
+    //sort WordModel by level in descending order
+    public int compareTo(WordModel compareWordModel){
+        int compareLevel = Integer.parseInt(compareWordModel.getLevel());
+        return compareLevel - Integer.parseInt(this.getLevel());
     }
 }
