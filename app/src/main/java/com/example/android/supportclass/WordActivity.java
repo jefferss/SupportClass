@@ -65,7 +65,7 @@ public class WordActivity extends Activity {
             Manifest.permission.WRITE_EXTERNAL_STORAGE
     };
     private static final String filePath = "/data/data/com.example.android.supportclass/files/";
-    private static final String fileName = "vocabularies.xml";
+    private String fileName = "";
 
     //导航切换
     private Intent intent;
@@ -96,6 +96,12 @@ public class WordActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_word);
+
+        Bundle b = getIntent().getExtras();
+        if(b != null)
+            fileName = b.getString("key") + ".xml";
+
+
         rgGroup = (RadioGroup)findViewById(R.id.rg_group);
         radioGroupChanged(rgGroup);
 
@@ -152,7 +158,7 @@ public class WordActivity extends Activity {
         wmlst.get(currWordIdx).setLevel(levelNum);
         try{
             //read content from xml file
-            FileInputStream inputStream = openFileInput("vocabularies.xml");
+            FileInputStream inputStream = openFileInput(fileName);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(inputStream);
@@ -184,7 +190,7 @@ public class WordActivity extends Activity {
 
         try{
             //read content from xml file
-            FileInputStream inputStream = openFileInput("vocabularies.xml");
+            FileInputStream inputStream = openFileInput(fileName);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(inputStream);
@@ -305,6 +311,4 @@ public class WordActivity extends Activity {
             btonPrevious.setEnabled(true);
         }
     }
-
-
 }

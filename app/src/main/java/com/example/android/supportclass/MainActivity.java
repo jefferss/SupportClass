@@ -2,18 +2,9 @@ package com.example.android.supportclass;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
-import android.view.Gravity;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -39,7 +30,7 @@ public class MainActivity extends Activity {
 
                         break;
                     case R.id.rb_word:
-                        intent.setClass(MainActivity.this,WordActivity.class );
+                        intent.setClass(MainActivity.this, WordSetListActivity.class );
                         startActivity(intent);
                         break;
 
