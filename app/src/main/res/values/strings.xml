@@ -12,4 +12,5 @@
     <string name="wordLayout_sourceTitle">Source:</string>
     <string name="wordLayout_sampleWord">SampleWord</string>
     <string name="wordLayout_sampleMeaning">SampleMeaning:</string>
+    <color name="blue">#1bdbbb</color>
 </resources>

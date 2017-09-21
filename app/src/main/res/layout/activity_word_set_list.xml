@@ -6,31 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/blue"
     tools:context="com.example.android.supportclass.WordSetListActivity">
 
-    <!--<FrameLayout-->
-    <!--android:id="@+id/content"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="0dp"-->
-    <!--android:layout_weight="1">-->
-
-    <ListView
-        android:id="@+id/lvWord"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dip"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="0.1"
+        android:gravity="center"
+        android:orientation="horizontal">
 
-    <!--<TextView-->
-    <!--android:id="@+id/txtWord"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_marginBottom="@dimen/activity_vertical_margin"-->
-    <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
-    <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
-    <!--android:layout_marginTop="@dimen/activity_vertical_margin"-->
-    <!--android:text="@string/title_home" />-->
+        <ListView
+            android:id="@+id/lvWord"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white" />
 
-    <!--</FrameLayout>-->
+    </LinearLayout>
+
     <FrameLayout android:id="@+id/FrameLayout01"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
