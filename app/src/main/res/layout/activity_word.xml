@@ -129,6 +129,17 @@
             android:layout_centerVertical="true"
             app:srcCompat="@android:drawable/screen_background_light_transparent" />
 
+        <TextView
+            android:id="@+id/txtWordIndex"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnPrecious"
+            android:layout_centerVertical="false"
+            android:layout_gravity="center_horizontal"
+            android:layout_toStartOf="@+id/btnNext"
+            android:text="WordIndex"
+            android:textAlignment="center" />
+
     </RelativeLayout>
     <RadioGroup
         android:id="@+id/rg_group"

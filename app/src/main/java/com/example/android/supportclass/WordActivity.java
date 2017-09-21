@@ -11,9 +11,11 @@ import android.support.annotation.IdRes;
 import android.support.v4.app.ActivityCompat;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -38,6 +40,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import model.WordModel;
+import utility.OnSwipeTouchListener;
 
 public class WordActivity extends Activity {
     private TextView txtvScreenWord;
@@ -50,6 +53,8 @@ public class WordActivity extends Activity {
     private Button btonNext;
     private Button btonPrevious;
     private RadioGroup rdogWord;
+    private LinearLayout linltWord;
+    private TextView txtvWordIndex;
 
     private List<WordModel> wmlst = new ArrayList<>();
     private int currWordIdx;
@@ -60,6 +65,7 @@ public class WordActivity extends Activity {
     };
     private static final String filePath = "/data/data/com.example.android.supportclass/files/";
     private String fileName = "";
+    private String className = "";
 
     //导航切换
     private Intent intent;
@@ -92,8 +98,10 @@ public class WordActivity extends Activity {
         setContentView(R.layout.activity_word);
 
         Bundle b = getIntent().getExtras();
-        if(b != null)
-            fileName = b.getString("key") + ".xml";
+        if(b != null){
+            className = b.getString("key");
+            fileName = className + ".xml";
+        }
 
 
         rgGroup = (RadioGroup)findViewById(R.id.rg_group);
@@ -109,6 +117,8 @@ public class WordActivity extends Activity {
         btonNext = (Button)  findViewById(R.id.btnNext);
         btonPrevious = (Button)  findViewById(R.id.btnPrecious);
         rdogWord = (RadioGroup) findViewById(R.id.rdgWord);
+        linltWord = (LinearLayout) findViewById(R.id.container);
+        txtvWordIndex = (TextView)  findViewById(R.id.txtWordIndex);
 
         btonPrevious.setEnabled(false);
 
@@ -116,8 +126,39 @@ public class WordActivity extends Activity {
         navigation.setSelectedItemId(R.id.navigation_word);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);*/
 
+        openWordSet();
 
-        openWordCards();
+        linltWord.setOnTouchListener(new OnSwipeTouchListener() {
+
+            public void onSwipeLeft() {
+                btonPrevious.setEnabled(true);
+                currWordIdx += 1;
+                updateWordCard(currWordIdx);
+                if (currWordIdx >= wmlst.size()-1) {
+                    btonNext.setEnabled(false);
+                }
+                else{
+                    btonNext.setEnabled(true);
+                }
+            }
+
+            public void onSwipeRight() {
+                btonNext.setEnabled(true);
+                currWordIdx -= 1;
+                updateWordCard(currWordIdx);
+                if (currWordIdx <= 0) {
+                    btonPrevious.setEnabled(false);
+                }
+                else{
+                    btonPrevious.setEnabled(true);
+                }
+            }
+
+
+            public boolean onTouch(View v, MotionEvent event) {
+                return gestureDetector.onTouchEvent(event);
+            }
+        });
     }
 
     @Override
@@ -180,7 +221,7 @@ public class WordActivity extends Activity {
         }
     }
 
-    private void openWordCards() {
+    private void openWordSet() {
 
         try{
             //read content from xml file
@@ -208,19 +249,19 @@ public class WordActivity extends Activity {
             Collections.shuffle(wmlst, new Random(seed));
             Collections.sort(wmlst);
 
-            int currWordIdx = 0;
-            int nextWordIdx = currWordIdx;
-            UpdateWordCard(nextWordIdx);
+            currWordIdx = 0;
+            updateWordCard(currWordIdx);
         }catch(Exception ex){
-            Log.i("ExceptionOccurred", "openWordCards: load xml file exception. Msg: " + ex.getMessage());
+            Log.i("ExceptionOccurred", "openWordSet: load xml file exception. Msg: " + ex.getMessage());
         }
     }
 
-    private void UpdateWordCard(int nWdIdx) {
-        txtvScreenWord.setText(wmlst.get(nWdIdx).getEnglishWord());
-        txtvScreenMeaning.setText(wmlst.get(nWdIdx).getMeaning());
-        txtvSource.setText(wmlst.get(nWdIdx).getSource());
-        switch (wmlst.get(nWdIdx).getLevel()) {
+    private void updateWordCard(int wordIdx) {
+        txtvScreenWord.setText(wmlst.get(wordIdx).getEnglishWord());
+        txtvScreenMeaning.setText(wmlst.get(wordIdx).getMeaning());
+        txtvSource.setText(wmlst.get(wordIdx).getSource());
+        txtvWordIndex.setText(className + " : " + Integer.toString(currWordIdx+1) + " / " +  Integer.toString(wmlst.size()));
+        switch (wmlst.get(wordIdx).getLevel()) {
             case "1":
                 rbnLevel1.setChecked(true);
                 break;
@@ -234,7 +275,7 @@ public class WordActivity extends Activity {
 
         if(isStoragePermissionGranted()){
             //display picture file
-            displayPicture(nWdIdx);
+            displayPicture(wordIdx);
         }
     }
 
@@ -284,8 +325,7 @@ public class WordActivity extends Activity {
     public void showNextWord(View v) {
         btonPrevious.setEnabled(true);
         currWordIdx += 1;
-        int wordIdx = currWordIdx;
-        UpdateWordCard(wordIdx);
+        updateWordCard(currWordIdx);
         if (currWordIdx >= wmlst.size()-1) {
             btonNext.setEnabled(false);
         }
@@ -297,8 +337,7 @@ public class WordActivity extends Activity {
     public void showPreviousWord(View v) {
         btonNext.setEnabled(true);
         currWordIdx -= 1;
-        int wordIdx = currWordIdx;
-        UpdateWordCard(wordIdx);
+        updateWordCard(currWordIdx);
         if (currWordIdx <= 0) {
             btonPrevious.setEnabled(false);
         }
