@@ -4,18 +4,29 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 public class MainActivity extends Activity {
 
     private RadioGroup rgGroup;
     private Intent intent;
+    private RadioButton rbnHome;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        rgGroup = (RadioGroup)findViewById(R.id.rg_group);
+        rgGroup = (RadioGroup) findViewById(R.id.rg_group);
         radioGroupChanged(rgGroup);
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        rbnHome = (RadioButton) findViewById(R.id.rb_home);
+        rbnHome.setChecked(true);
     }
 
     //radio group 改变监听
