@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -55,7 +56,10 @@ public class WordSetListActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 // show a toast on TextView text
-                CharSequence className = ((TextView) view).getText();
+                LinearLayout ll = (LinearLayout) view;
+                TextView tv = ll.findViewById(R.id.txtWord);
+
+                CharSequence className = tv.getText().toString();
                 Toast.makeText(getApplicationContext(),
                         className, Toast.LENGTH_SHORT).show();
 

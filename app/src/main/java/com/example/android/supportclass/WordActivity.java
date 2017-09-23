@@ -115,7 +115,7 @@ public class WordActivity extends Activity {
         rbnLevel3 = (RadioButton)  findViewById(R.id.rbLevel3);
         imgvWordPhoto = (ImageView) findViewById(R.id.imgWordPhoto);
         btonNext = (Button)  findViewById(R.id.btnNext);
-        btonPrevious = (Button)  findViewById(R.id.btnPrecious);
+        btonPrevious = (Button)  findViewById(R.id.btnPrevious);
         rdogWord = (RadioGroup) findViewById(R.id.rdgWord);
         linltWord = (LinearLayout) findViewById(R.id.container);
         txtvWordIndex = (TextView)  findViewById(R.id.txtWordIndex);

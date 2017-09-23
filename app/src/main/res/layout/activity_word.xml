@@ -23,7 +23,7 @@
         android:layout_weight="2.07">
 
         <Button
-            android:id="@+id/btnPrecious"
+            android:id="@+id/btnPrevious"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/btnNext"
@@ -48,14 +48,24 @@
             android:onClick="showNextWord"
             android:text="@string/wordLayout_next" />
 
+
         <TextView
             android:id="@+id/tvWord"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_gravity="start"
+            android:padding="10dip"
             android:text="@string/wordLayout_sampleWord"
-            android:textAlignment="center"
+            android:textAlignment="textStart"
             android:textSize="24sp"
             android:textStyle="bold" />
+
+        <View
+            android:id="@+id/viewDividerWord"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/tvWord"
+            android:background="@android:color/black" />
 
         <TextView
             android:id="@+id/tvMeaning"
@@ -64,38 +74,56 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/tvWord"
+            android:layout_gravity="start"
+            android:padding="10dip"
             android:text="@string/wordLayout_sampleMeaning"
-            android:textAlignment="center" />
+            android:textAlignment="textStart"
+            android:textColor="@android:color/black" />
 
-        <EditText
-            android:id="@+id/ptSource"
-            android:layout_width="70dp"
+        <View
+            android:id="@+id/viewDividerMeaning"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/tvMeaning"
+            android:background="@android:color/black" />
+
+        <TextView
+            android:id="@+id/tvSourceTitle"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/rdgWord"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/viewDividerWordPhoto"
+            android:layout_marginBottom="54dp"
+            android:layout_marginEnd="13dp"
+            android:layout_marginRight="13dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:text="@string/wordLayout_sourceTitle"
-            android:layout_alignBottom="@+id/rdgWord"
-            android:layout_toLeftOf="@+id/tvSource"
-            android:layout_toStartOf="@+id/tvSource"
-            android:layout_marginRight="13dp"
-            android:layout_marginEnd="13dp"
-            android:layout_marginBottom="54dp" />
+            android:textColor="@android:color/black" />
 
         <TextView
             android:id="@+id/tvSource"
-            android:layout_width="200dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/tvSourceTitle"
+            android:layout_toEndOf="@+id/tvSourceTitle"
+            android:layout_below="@+id/viewDividerWordPhoto"
             android:text="@string/wordLayout_definitionSource"
-            android:layout_alignBaseline="@+id/ptSource"
-            android:layout_alignBottom="@+id/ptSource"
-            android:layout_alignRight="@+id/btnNext"
-            android:layout_alignEnd="@+id/btnNext" />
+            android:textColor="@android:color/black" />
+
+        <View
+            android:id="@+id/viewDividerSource"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/tvSource"
+            android:background="@android:color/black" />
 
         <RadioGroup
             android:id="@+id/rdgWord"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_above="@+id/btnPrecious"
+            android:layout_above="@+id/btnPrevious"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:orientation="horizontal">
@@ -122,26 +150,50 @@
                 android:text="@string/wordLayout_level3" />
         </RadioGroup>
 
+        <View
+            android:id="@+id/viewDividerRadioLevel"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/rdgWord"
+            android:background="@android:color/black" />
+
         <ImageView
             android:id="@+id/imgWordPhoto"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="155dp"
+            android:layout_height="155dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             app:srcCompat="@android:drawable/screen_background_light_transparent" />
+
+        <View
+            android:id="@+id/viewDividerWordPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/imgWordPhoto"
+            android:background="@android:color/black" />
 
         <TextView
             android:id="@+id/txtWordIndex"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btnPrecious"
+            android:layout_below="@+id/btnPrevious"
             android:layout_centerVertical="false"
             android:layout_gravity="center_horizontal"
+            android:layout_toLeftOf="@+id/btnNext"
             android:layout_toStartOf="@+id/btnNext"
             android:text="WordIndex"
             android:textAlignment="center" />
 
     </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/black"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@android:color/transparent"/>
     <RadioGroup
         android:id="@+id/rg_group"
         android:layout_width="match_parent"
