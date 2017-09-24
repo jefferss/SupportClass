@@ -1,0 +1,488 @@
+/**
+ * Otago Polytechnic Colors
+ *
+ */
+.typography p, .typography ul, .typography ol {
+  font-size: 14px;
+  line-height: 17px; }
+
+.programmeInformationPage aside {
+  margin: 0;
+  max-width: 300px;
+  /* we just set a width. We hide on tablet devices */
+  width: auto;
+  font-size: 1.15em;
+  line-height: 1.05em; }
+
+.featuredStory a {
+  color: white; }
+
+h1 {
+  line-height: 0.95em;
+  margin: 0 0 15px 0; }
+
+.typography header {
+  padding: 0 7px 0 0; }
+
+.programmeInformationContainer {
+  height: auto;
+  overflow: hidden;
+  position: relative; }
+  .programmeInformationContainer article {
+    max-width: 648px;
+    float: none;
+    width: auto;
+    overflow: hidden; }
+  .programmeInformationContainer aside {
+    float: right; }
+
+/** Todo: enable me once given the green light */
+.programme-dates {
+  display: none; }
+
+.programmeInformationPage .hero {
+  background-color: transparent;
+  height: auto;
+  width: 655px;
+  margin: 0 0 7px; }
+  .programmeInformationPage .hero .video {
+    display: block;
+    position: relative;
+    float: left; }
+    .programmeInformationPage .hero .video span {
+      height: 75px;
+      left: 122px;
+      position: absolute;
+      top: 85px;
+      width: 75px; }
+    .programmeInformationPage .hero .video:hover span {
+      opacity: 0.8;
+      filter: alpha(opacity=80); }
+
+.ie6 .programmeInformationPage article {
+  width: 648px; }
+
+.programmeInformationPage .featuredStory {
+  background-color: #6FA6A3;
+  color: white;
+  font-size: 19px;
+  height: 210px;
+  line-height: 20px;
+  margin: 0 0 7px;
+  padding: 32px 27px 0;
+  width: 246px;
+  position: relative; }
+
+.hospitality-careers .featuredStory {
+  background-color: #b45341; }
+
+.creative-careers .featuredStory {
+  background-color: #e39027; }
+
+.lifesciences-careers .featuredStory {
+  background-color: #8f9a46; }
+
+.businesstourismandit-careers .featuredStory {
+  background-color: #5d8ba6; }
+
+.tradesandtechnical-careers .featuredStory {
+  background-color: #6d938a; }
+
+.sportandadventure-careers .featuredStory {
+  background-color: #4c99ce; }
+
+.sustainablepractice-careers .featuredStory {
+  background-color: #9ec030; }
+
+.english-careers .featuredStory {
+  background-color: #5f98d5; }
+
+.featuredStory ul {
+  font-size: 14px;
+  line-height: 18px;
+  margin: 14px 0;
+  padding: 0 0 0 0.7em; }
+  .featuredStory ul li {
+    text-indent: 0; }
+    .featuredStory ul li:before {
+      content: none; }
+
+.programmeInformationPage .featuredStory q {
+  padding: 0 0 0 4px; }
+
+.featuredStory span {
+  margin: 3px 0 0 -22px;
+  position: absolute; }
+.featuredStory div {
+  bottom: 5px;
+  position: absolute;
+  width: 246px; }
+.featuredStory q {
+  font-size: 18px; }
+
+.hero {
+  overflow: hidden; }
+  .hero img {
+    float: left;
+    margin: 0 7px 0 0; }
+
+.tablet-nav .programmeInformationPage aside {
+  display: none; }
+
+.programmeInformationPage aside .dImage {
+  padding: 0; }
+.programmeInformationPage .applyDate {
+  background-color: #EDEBE7;
+  font-weight: bold;
+  padding: 10px 15px; }
+.programmeInformationPage aside .applyButtons {
+  background-color: #dcd8d1;
+  font-weight: 900;
+  padding: 10px 15px;
+  font-size: 18px; }
+.programmeInformationPage .applyDropdown {
+  margin: 0 0 7px; }
+.programmeInformationPage .applyDropdown ul {
+  background-color: #EDEBE7;
+  margin: 0;
+  padding: 11px 15px; }
+  .programmeInformationPage .applyDropdown ul li {
+    border-bottom: 1px solid #C8C5C2;
+    font-size: 14px;
+    padding: 4px 0 5px;
+    text-indent: 0; }
+    .programmeInformationPage .applyDropdown ul li:last-child {
+      border-bottom: none; }
+    .programmeInformationPage .applyDropdown ul li a {
+      color: #362f2d; }
+    .programmeInformationPage .applyDropdown ul li:before {
+      content: none; }
+.programmeInformationPage aside img {
+  display: block; }
+.programmeInformationPage .displayBlock {
+  margin: 0 0 7px;
+  padding: 10px 15px 10px 15px; }
+.programmeInformationPage dd p {
+  margin: 0;
+  font-size: 1em; }
+.programmeInformationPage dl {
+  background-color: #EDEBE7;
+  margin: 7px 0;
+  padding: 15px; }
+.programmeInformationPage dt {
+  float: left;
+  font-weight: bold;
+  min-width: 75px;
+  width: 0; }
+.programmeInformationPage dd {
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0 0 6px 84px; }
+.programmeInformationPage .feeDisclaimer {
+  font-size: 12px;
+  line-height: 1em;
+  margin: 0; }
+.programmeInformationPage .summary {
+  padding: 0 34px 0 0; }
+.programmeInformationPage summary {
+  font-size: 1.3em;
+  clear: both; }
+.programmeInformationPage details {
+  display: block;
+  margin: 0 0 7px 2em; }
+  .programmeInformationPage details.shadow {
+    border: 1px solid #BDBDBD;
+    margin: -11px -8px 18px;
+    padding: 10px 10px 21px 34px;
+    width: 900px; }
+.programmeInformationPage header .progMobile {
+  display: none; }
+.programmeInformationPage .hero .video .videoContainer {
+  position: relative;
+  height: 242px; }
+
+.applybutton {
+  background-color: #1daeea;
+  padding: 10px 17px;
+  font-weight: 900;
+  font-size: 18px;
+  color: white;
+  display: block;
+  margin: 0 0 6px; }
+
+.wide table {
+  width: 100%; }
+
+.infoSnippets {
+  padding: 7px 20px 0 0; }
+  .infoSnippets details .icon-Minus, .infoSnippets details .icon-Minus2, .infoSnippets details .icon-Plus, .infoSnippets details .icon-Plus2 {
+    color: #70CAED;
+    font-size: 1.1em;
+    margin: 3px 0 0 -1.3em;
+    position: absolute; }
+  .infoSnippets details span.icon-Minus {
+    color: #c8c1b9; }
+
+.touch-nav .hero {
+  display: none; }
+
+.programmeintro {
+  margin: 0 0 10px;
+  background-color: #EDEBE7;
+  overflow: hidden; }
+  .programmeintro dl:first-child {
+    width: 50%;
+    float: left;
+    box-sizing: border-box; }
+  .programmeintro dl {
+    width: 35%;
+    float: right; }
+  .programmeintro dt {
+    float: none; }
+  .programmeintro dd {
+    float: none;
+    margin: 0px 0 10px; }
+
+.programme-dates {
+  clear: both;
+  margin: 0;
+  padding: 0 !important;
+  text-indent: 0; }
+  .programme-dates li {
+    text-indent: 0 !important; }
+  .programme-dates li:before {
+    content: none !important; }
+  .programme-dates__item {
+    overflow: hidden;
+    border-top: 1px solid #333;
+    padding: 7px 0; }
+  .programme-dates__item--header {
+    font-weight: bold;
+    border-top: medium none; }
+  .programme-dates__item--location, .programme-dates__item--intake, .programme-dates__item--studybreak {
+    display: block;
+    float: left;
+    padding: 7px 15px; }
+  .programme-dates__item--location {
+    min-width: 100px; }
+  .programme-dates__item--intake {
+    min-width: 120px;
+    max-width: 120px; }
+  .programme-dates ul {
+    padding: 0; }
+  .programme-dates ul li {
+    text-indent: 0; }
+  .programme-dates ul li:before {
+    content: none; }
+  .programme-dates ul ul {
+    padding: 0; }
+  .programme-dates ul h3 {
+    font-weight: bold; }
+  .programme-dates__breaks {
+    margin: 0 0 0 20px;
+    list-style-type: disc; }
+  .programme-dates__intake {
+    margin: 0 0 0 20px;
+    list-style-type: disc; }
+  .programme-dates__breakholder {
+    margin: 0 0 0 20px; }
+
+/** Key Information Set block */
+.kis {
+  font-size: 14px; }
+  .kis .pdfOnly {
+    display: none; }
+  .kis h2 {
+    background-color: #0557ad;
+    color: white;
+    padding: 9px 15px;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0; }
+  .kis h3 {
+    padding: 15px;
+    font-size: 17px;
+    margin: 0;
+    font-weight: 600; }
+  .kis h4 {
+    text-transform: uppercase; }
+  .kis__requirements {
+    background-color: #EDEBE7;
+    margin: 4px 0 0;
+    display: inline-block;
+    width: 100%; }
+  .kis__intro {
+    background-color: #d2d1cc;
+    padding: 10px 15px;
+    width: 100%;
+    display: inline-block;
+    box-sizing: border-box; }
+  .kis__intro h3 {
+    font-size: 1.25em; }
+  .kis__intro dl {
+    margin: 0px;
+    padding: 12px 0 0; }
+  .kis__intro--link-domestic {
+    padding: 12px;
+    background-color: #0557ad;
+    width: 123px;
+    display: block;
+    float: left;
+    color: white;
+    text-align: center; }
+  .kis__intro--link-international {
+    padding: 12px;
+    background-color: #55576c;
+    width: 124px;
+    float: right;
+    text-align: center;
+    color: white; }
+  .kis__intro--link-international:hover, .kis__intro--link-international:focus {
+    color: #EEE;
+    background-color: #787b95; }
+  .kis__intro--link-domestic:hover, .kis__intro--link-domestic:focus {
+    color: #EEE;
+    background-color: #077cf7; }
+  .kis__fees {
+    background-color: #EDEBE7;
+    margin: 4px 0 0; }
+  .kis__fees table {
+    width: 100%; }
+  .kis__fees thead {
+    background-color: #0557ad;
+    color: white; }
+  .kis__fees td {
+    padding: 5px; }
+  .kis__fees tr {
+    background-color: transparent !important; }
+  .kis__container {
+    padding: 10px 15px; }
+  .kis__container--divider {
+    padding: 10px 15px;
+    border-top: 1px solid #333; }
+  .kis__container p, .kis__container--divider p {
+    margin: 0; }
+  .kis strong {
+    text-transform: uppercase; }
+  .kis__success {
+    background-color: #EDEBE7;
+    margin: 4px 0;
+    display: inline-block;
+    width: 100%; }
+  .kis dl {
+    margin: 0; }
+  .kis dt {
+    min-width: 155px;
+    font-weight: 500; }
+  .kis table, .kis table td {
+    border: 0;
+    font-size: 14px;
+    border-collapse: collapse; }
+  .kis tr td:first-child {
+    padding: 5px 5px 5px 15px; }
+  .kis__legacy dt {
+    min-width: 75px !important; }
+  .kis__legacy dl {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 3px 0 0;
+    width: 100%; }
+  .kis__disclaimer {
+    background-color: #0557ad;
+    color: white;
+    padding: 9px 15px;
+    font-size: 14px;
+    margin: 0; }
+  .kis__disclaimer a {
+    color: white; }
+  .kis__disclaimer strong {
+    text-transform: none; }
+  .kis__disclaimer a:hover {
+    color: #CCC; }
+  .kis .kis__intro--link-domestic, .kis .kis__intro--link-international {
+    width: 50%;
+    box-sizing: border-box; }
+  .kis .kis__intro--link-domestic {
+    border-right: 2px solid white; }
+  .kis .kis__intro--link-international {
+    border-left: 2px solid white; }
+
+.kishoverbox {
+  border: 1px solid #6a95ce;
+  position: absolute;
+  background-color: #d1d1dd;
+  z-index: 20;
+  right: 300px;
+  max-width: 600px; }
+  .kishoverbox h2 {
+    background-color: #8e8c99;
+    padding: 20px;
+    margin: 0;
+    color: white;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600; }
+  .kishoverbox p {
+    margin: 15px 20px; }
+  .kishoverbox h3 {
+    margin: 10px 20px 0;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600; }
+  .kishoverbox hr {
+    margin: 10px 20px;
+    border: 1px solid #333; }
+
+.kis__container .icon-ChevronRight, .kis__container--divider .icon-ChevronRight {
+  position: absolute;
+  margin: 2px 2px 0 0; }
+
+.hiddenebs {
+  color: white; }
+
+/* Yellow for COT */
+.ProgrammeInformationPage .programmeInformationPage aside .centralotagoLocation, .ProgrammeInformationPage .programmeInformationPage aside .cromwellLocation, .ProgrammeInformationPage .programmeInformationPage aside .bannockburnLocation {
+  background-color: #f2b931; }
+.ProgrammeInformationPage .programmeInformationPage aside .aucklandLocation {
+  background-color: #6bcbf2; }
+.ProgrammeInformationPage .programmeInformationPage aside .wintecLocation, .ProgrammeInformationPage .programmeInformationPage aside .distancedeliveryLocation {
+  background-color: #fbdb03; }
+
+summary {
+  outline-color: transparent; }
+
+.programmeInformationPage #applyNowSidebar {
+  display: none; }
+.programmeInformationPage form label.left {
+  font-size: 0.95em; }
+.programmeInformationPage .actionMsg p {
+  font-size: 1.2em;
+  line-height: 1.1em; }
+.programmeInformationPage .actionBtnSend {
+  bottom: 33px;
+  right: 55px; }
+.programmeInformationPage #AskAQuestionForm_AskAQuestion {
+  margin: 8px 0 0; }
+
+/* Global mobile layout */
+@media screen and (max-width: 768px) {
+  .programmeInformationPage .hiddenebs, .programmeInformationPage form, .programmeInformationPage h1 {
+    display: none; }
+  .programmeInformationPage .hero, .programmeInformationPage .featuredStory, .programmeInformationPage .kishoverbox * {
+    display: none; }
+  .programmeInformationPage aside {
+    float: none;
+    width: 100%;
+    max-width: none; }
+  .programmeInformationPage .summary {
+    padding: 0px !important; }
+  .programmeInformationPage #applyNowSidebar {
+    display: block; }
+  .programmeInformationPage article {
+    max-width: 100%; }
+  .programmeInformationPage header {
+    padding: 0; }
+    .programmeInformationPage header .progMobile {
+      display: block; } }
+
+/*# sourceMappingURL=programmeinformationpage.css.map */
