@@ -68,7 +68,6 @@ public class WordSetListActivity extends Activity {
                 b.putString("key", className.toString());
                 intent.putExtras(b); //Put class name to next Intent
                 startActivity(intent);
-                finish();
             }
         });
 
