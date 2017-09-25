@@ -6,7 +6,7 @@
         <meaning>red fruit</meaning>
         <level>1</level>
         <picture>apple.jpg</picture>
-        <source>Longman</source>
+        <source>Sample Source</source>
     </word>
     <word>
         <id>2</id>
@@ -14,7 +14,7 @@
         <meaning>yellow fruit</meaning>
         <level>2</level>
         <picture>banana.png</picture>
-        <source>Longman</source>
+        <source>Sample Source</source>
     </word>
     <word>
         <id>3</id>
@@ -22,6 +22,6 @@
         <meaning>travel tool</meaning>
         <level>3</level>
         <picture>car.png</picture>
-        <source>Longman</source>
+        <source>Sample Source</source>
     </word>
 </vocabularies>

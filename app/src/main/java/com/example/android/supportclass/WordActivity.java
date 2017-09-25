@@ -100,6 +100,7 @@ public class WordActivity extends Activity {
 
         setContentView(R.layout.activity_word);
 
+        //get tapped item name from WordSetListActivity
         Bundle b = getIntent().getExtras();
         if(b != null){
             className = b.getString("key");

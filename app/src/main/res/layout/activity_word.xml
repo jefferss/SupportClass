@@ -28,10 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/btnNext"
             android:layout_alignBottom="@+id/btnNext"
-            android:layout_marginEnd="48dp"
-            android:layout_marginRight="48dp"
-            android:layout_toLeftOf="@+id/btnNext"
-            android:layout_toStartOf="@+id/btnNext"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
             android:onClick="showPreviousWord"
             android:text="@string/wordLayout_previous" />
 
@@ -42,9 +40,9 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginBottom="26dp"
-            android:layout_marginEnd="73dp"
-            android:layout_marginRight="73dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginRight="60dp"
             android:onClick="showNextWord"
             android:text="@string/wordLayout_next" />
 
@@ -174,15 +172,14 @@
 
         <TextView
             android:id="@+id/txtWordIndex"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/btnPrevious"
             android:layout_centerVertical="false"
             android:layout_gravity="center_horizontal"
-            android:layout_toLeftOf="@+id/btnNext"
-            android:layout_toStartOf="@+id/btnNext"
             android:text="WordIndex"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@android:color/black" />
 
     </RelativeLayout>
 
