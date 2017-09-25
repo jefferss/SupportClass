@@ -36,10 +36,14 @@ public class HomeDetailActivity extends Activity {
                 switch (checkedId){
                     case R.id.rb_home:
                         //首页
+                        rbHomeBtn.setChecked(false);
+                        rbLessonBtn.setChecked(false);
                         intent.setClass(HomeDetailActivity.this, MainActivity.class );
                         startActivity(intent);
                         break;
                     case R.id.rb_word:
+                        rbHomeBtn.setChecked(false);
+                        rbLessonBtn.setChecked(false);
                         intent.setClass(HomeDetailActivity.this, WordSetListActivity.class );
                         startActivity(intent);
                         break;
@@ -50,9 +54,13 @@ public class HomeDetailActivity extends Activity {
     }
 
 
+    @Override
+    protected void onStart() {
+        super.onStart();
 
-
-
+        rbHomeBtn.setChecked(false);
+        rbLessonBtn.setChecked(false);
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

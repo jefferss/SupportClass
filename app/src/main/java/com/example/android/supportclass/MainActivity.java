@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
     private boolean isInfor;
     //首页list切换按钮组
     private RadioGroup rg_home_list;
-    private RadioButton rbnHome;
+    private RadioButton rbHomeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +69,7 @@ public class MainActivity extends Activity {
         rgListGroup = (RadioGroup)findViewById(R.id.rg_school);
         homeListView= (ListView) findViewById(R.id.home_infor);
         rg_home_list= findViewById(R.id.rg_school);
+        rbHomeBtn=findViewById(R.id.rb_home);
         //拿到view
         initData();
         mViewPager.setAdapter(new GuildAdapter());//设置数据
@@ -197,12 +198,12 @@ public class MainActivity extends Activity {
 
     }
 
- /*   @Override
+    @Override
     protected void onStart() {
         super.onStart();
-        rbnHome = (RadioButton) findViewById(R.id.rb_home);
-        rbnHome.setChecked(true);
-    }*/
+
+        rbHomeBtn.setChecked(true);
+    }
 /*
     @Override
     protected void onResume() {
