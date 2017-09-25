@@ -22,7 +22,7 @@
         android:layout_weight="2.07">
 
         <Button
-            android:id="@+id/btnPrecious"
+            android:id="@+id/btnPrevious"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/btnNext"
@@ -67,7 +67,7 @@
             android:textAlignment="center" />
 
         <EditText
-            android:id="@+id/ptSource"
+            android:id="@+id/tvSourceTitle"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -85,8 +85,8 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="@string/wordLayout_definitionSource"
-            android:layout_alignBaseline="@+id/ptSource"
-            android:layout_alignBottom="@+id/ptSource"
+            android:layout_alignBaseline="@+id/tvSourceTitle"
+            android:layout_alignBottom="@+id/tvSourceTitle"
             android:layout_alignRight="@+id/btnNext"
             android:layout_alignEnd="@+id/btnNext" />
 
@@ -94,7 +94,7 @@
             android:id="@+id/rdgWord"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_above="@+id/btnPrecious"
+            android:layout_above="@+id/btnPrevious"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:orientation="horizontal">

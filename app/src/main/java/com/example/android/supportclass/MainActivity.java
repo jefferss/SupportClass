@@ -22,6 +22,7 @@ import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -54,6 +55,8 @@ public class MainActivity extends Activity {
     private boolean isInfor;
     //首页list切换按钮组
     private RadioGroup rg_home_list;
+    private RadioButton rbnHome;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -191,6 +194,14 @@ public class MainActivity extends Activity {
 
             container.removeView(mImageViewList.get(position));
         }
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        rbnHome = (RadioButton) findViewById(R.id.rb_home);
+        rbnHome.setChecked(true);
     }
 
     //radio group 改变监听
@@ -205,7 +216,7 @@ public class MainActivity extends Activity {
 
                         break;
                     case R.id.rb_word:
-                        intent.setClass(MainActivity.this,WordActivity.class );
+                        intent.setClass(MainActivity.this, WordSetListActivity.class );
                         startActivity(intent);
                         break;
 
