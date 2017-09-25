@@ -2,6 +2,7 @@ package com.example.android.supportclass;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.IdRes;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +33,7 @@ public class WordSetListActivity extends Activity {
 
         rgGroup = (RadioGroup)findViewById(R.id.rg_group);
         radioGroupChanged(rgGroup);
+
 
         //get all xml files
         File directory = new File(filePath);
@@ -68,7 +71,7 @@ public class WordSetListActivity extends Activity {
                 b.putString("key", className.toString());
                 intent.putExtras(b); //Put class name to next Intent
                 startActivity(intent);
-                finish();
+
             }
         });
 

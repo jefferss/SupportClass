@@ -194,41 +194,6 @@
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:background="@android:color/transparent"/>
-    <RadioGroup
-        android:id="@+id/rg_group"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
 
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:weightSum="1">
 
-        <RadioButton
-            android:id="@+id/rb_home"
-            android:layout_weight="0.5"
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:background="@android:color/transparent"
-            android:button="@null"
-            android:text="Home"
-            android:drawablePadding="3dp"
-            android:gravity="center"
-            android:drawableTop="@drawable/tab_home_selector"
-            />
-
-        <RadioButton
-            android:id="@+id/rb_word"
-            android:checked="true"
-            android:background="@android:color/transparent"
-            android:text="Words"
-            android:layout_height="match_parent"
-            android:layout_width="wrap_content"
-            android:layout_weight="0.5"
-            android:button="@null"
-            android:drawablePadding="3dp"
-            android:gravity="center"
-            android:drawableTop="@drawable/tab_lessons_selector"
-            />
-
-    </RadioGroup>
 </LinearLayout>

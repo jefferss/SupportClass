@@ -197,12 +197,20 @@ public class MainActivity extends Activity {
 
     }
 
-    @Override
+ /*   @Override
     protected void onStart() {
         super.onStart();
         rbnHome = (RadioButton) findViewById(R.id.rb_home);
         rbnHome.setChecked(true);
-    }
+    }*/
+/*
+    @Override
+    protected void onResume() {
+    super.onResume();
+
+        rbHomeBtn.setChecked(false);
+        rbLessonBtn.setChecked(false);
+    }*/
 
     //radio group 改变监听
     public void radioGroupChanged(RadioGroup rgGroup){

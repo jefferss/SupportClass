@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.IdRes;
 import android.support.v4.app.ActivityCompat;
@@ -69,8 +70,10 @@ public class WordActivity extends Activity {
 
     //导航切换
     private Intent intent;
-    private RadioGroup rgGroup;
-    public void radioGroupChanged(RadioGroup rgGroup){
+  //  private RadioGroup rgGroup;
+
+
+    /*public void radioGroupChanged(RadioGroup rgGroup){
         intent=new Intent();
 
         rgGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -89,7 +92,7 @@ public class WordActivity extends Activity {
                 }
             }
         });
-    }
+    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -104,8 +107,9 @@ public class WordActivity extends Activity {
         }
 
 
-        rgGroup = (RadioGroup)findViewById(R.id.rg_group);
-        radioGroupChanged(rgGroup);
+       // rgGroup = (RadioGroup)findViewById(R.id.rg_group);
+       // radioGroupChanged(rgGroup);
+
 
         txtvScreenWord = (TextView) findViewById(R.id.tvWord);
         txtvScreenMeaning = (TextView) findViewById(R.id.tvMeaning);
