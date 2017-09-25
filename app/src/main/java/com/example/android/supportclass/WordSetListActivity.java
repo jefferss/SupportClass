@@ -88,6 +88,8 @@ public class WordSetListActivity extends Activity {
                         className, Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(WordSetListActivity.this, WordActivity.class);
+
+                //pass tapped item name to WordActivity
                 Bundle b = new Bundle();
                 b.putString("key", className.toString());
                 intent.putExtras(b); //Put class name to next Intent
