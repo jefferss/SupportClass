@@ -3,6 +3,7 @@ package com.example.android.supportclass;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.IdRes;
@@ -56,7 +57,7 @@ public class MainActivity extends Activity {
     //首页list切换按钮组
     private RadioGroup rg_home_list;
     private RadioButton rbHomeBtn;
-
+    private RadioButton rbLessonBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +69,7 @@ public class MainActivity extends Activity {
         mViewPager= (ViewPager) findViewById(R.id.home_vp_guide);
         rgListGroup = (RadioGroup)findViewById(R.id.rg_school);
         homeListView= (ListView) findViewById(R.id.home_infor);
+        rbLessonBtn=findViewById(R.id.rb_word);
         rg_home_list= findViewById(R.id.rg_school);
         rbHomeBtn=findViewById(R.id.rb_home);
         //拿到view
@@ -75,6 +77,7 @@ public class MainActivity extends Activity {
         mViewPager.setAdapter(new GuildAdapter());//设置数据
         //list 点击事件
         listItemOnClick();
+
         //首页list监听方法
         radioGroupListChanged(rg_home_list);
         //判断位初始化
@@ -228,11 +231,12 @@ public class MainActivity extends Activity {
                         intent.setClass(MainActivity.this, WordSetListActivity.class );
                         startActivity(intent);
                         break;
-
                 }
             }
         });
     }
+
+
     //首页list切换监听器
     //此处判断是哪一个按钮被点击决定重新初始化哪一个list
     public void radioGroupListChanged(RadioGroup rgGroup){
