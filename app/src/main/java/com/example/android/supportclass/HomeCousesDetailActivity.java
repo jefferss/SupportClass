@@ -33,10 +33,14 @@ public class HomeCousesDetailActivity extends Activity {
                 switch (checkedId){
                     case R.id.rb_home:
                         //首页
+                        homeBtn.setChecked(false);
+                        lessonBtn.setChecked(false);
                         intent.setClass(HomeCousesDetailActivity.this, MainActivity.class );
                         startActivity(intent);
                         break;
                     case R.id.rb_word:
+                        homeBtn.setChecked(false);
+                        lessonBtn.setChecked(false);
                         intent.setClass(HomeCousesDetailActivity.this, WordSetListActivity.class );
                         startActivity(intent);
                         break;
