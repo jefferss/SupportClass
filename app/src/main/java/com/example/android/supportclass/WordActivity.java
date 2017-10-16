@@ -3,13 +3,9 @@ package com.example.android.supportclass;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
-import android.support.annotation.IdRes;
-import android.support.v4.app.ActivityCompat;
+import android.os.Environment;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -64,7 +60,7 @@ public class WordActivity extends Activity {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
     };
-    private static final String filePath = "/data/data/com.example.android.supportclass/files/";
+    private static final String filePath = Environment.getExternalStorageDirectory() + "/SupportClass/";
     private String fileName = "";
     private String className = "";
 
@@ -230,7 +226,7 @@ public class WordActivity extends Activity {
 
         try{
             //read content from xml file
-            FileInputStream inputStream = openFileInput(fileName);
+            FileInputStream inputStream = new FileInputStream(filePath + fileName);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(inputStream);
@@ -278,10 +274,7 @@ public class WordActivity extends Activity {
                 break;
         }
 
-        if(isStoragePermissionGranted()){
-            //display picture file
-            displayPicture(wordIdx);
-        }
+        displayPicture(wordIdx);
     }
 
     private void displayPicture(int nWdIdx) {
@@ -295,35 +288,6 @@ public class WordActivity extends Activity {
             //clear word image
             imgvWordPhoto.setImageResource(0);
             e.printStackTrace();
-        }
-    }
-
-    public  boolean isStoragePermissionGranted() {
-        //for API >= 23, runtime permission is needed
-        if (Build.VERSION.SDK_INT >= 23) {
-            if (checkSelfPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE)
-                    == PackageManager.PERMISSION_GRANTED) {
-                Log.v("CheckPermission", "Permission is granted");
-                return true;
-            } else {
-
-                Log.v("CheckPermission", "Permission is revoked");
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
-                return false;
-            }
-        } else {
-            Log.v("CheckPermission", "Permission is granted");
-            return true;
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(grantResults[0]== PackageManager.PERMISSION_GRANTED){
-            Log.v("CheckPermission","Permission: "+permissions[0]+ "was "+grantResults[0]);
-            //display picture file
-            displayPicture(currWordIdx);
         }
     }
 
